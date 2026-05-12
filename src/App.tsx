@@ -338,7 +338,7 @@ const PoliticalHospitality = () => {
                {/* Row 2: 3 equal new images */}
                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="relative overflow-hidden group funky-card p-2 bg-white h-56">
-                        <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:'center 70%'}} alt="Power 1"/>
+                        <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:'center 20%'}} alt="Power 1"/>
                     </div>
                     <div className="relative overflow-hidden group funky-card p-2 bg-white h-56">
                         <img src="https://i.imgur.com/c5P6T82.jpg" className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 2"/>
