@@ -6,6 +6,13 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
+    { src: "https://i.imgur.com/SVKdIjf.jpg", alt: "VVIP Elite Moment" },
+    { src: "https://i.imgur.com/Iu5CyKt.jpg", alt: "Celebrity Hospitality" },
+    { src: "https://i.imgur.com/KT9So0f.jpg", alt: "Power & Protocol" },
+    { src: "https://i.imgur.com/FDPVQwP.jpg", alt: "Handling The Elite" },
+    { src: "https://i.imgur.com/QHqmyr0.jpg", alt: "VVIP Experience" },
+    { src: "https://i.imgur.com/c5P6T82.jpg", alt: "Exclusive Access" },
+    { src: "https://i.imgur.com/SBUKdpX.jpg", alt: "Grand Event" },
     { src: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800", alt: "Audio Launch" },
     { src: "https://images.unsplash.com/photo-1540039155732-6a71bbafcbde?q=80&w=800", alt: "Stage Setup" },
     { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800", alt: "Wedding Mandap" },
@@ -28,14 +35,18 @@ export default function Gallery() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="masonry-grid columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
           {images.map((img, i) => (
-            <div 
-              key={i} 
-              className="break-inside-avoid relative group cursor-pointer border border-brand-gold/20 bg-white"
+            <div
+              key={i}
+              className="break-inside-avoid relative group cursor-pointer border border-brand-gold/20 bg-white overflow-hidden"
               onClick={() => setSelectedImage(img.src)}
             >
-              <img src={img.src} alt={img.alt} className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
+              />
               <div className="absolute inset-0 bg-brand-green/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-white uppercase tracking-widest text-xs font-bold border border-white px-6 py-3 bg-brand-green/50 backdrop-blur-sm">Enlarge View</span>
               </div>
@@ -57,13 +68,13 @@ export default function Gallery() {
             <button className="absolute top-8 right-8 text-brand-green hover:text-brand-gold transition-colors z-[60]" onClick={() => setSelectedImage(null)}>
               <X size={40} />
             </button>
-            <motion.img 
+            <motion.img
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.9 }}
-              src={selectedImage} 
-              alt="Full size" 
-              className="max-w-full max-h-[90vh] object-contain border border-brand-gold shadow-2xl relative z-50" 
+              src={selectedImage}
+              alt="Full size"
+              className="max-w-full max-h-[90vh] object-contain border border-brand-gold shadow-2xl relative z-50"
               onClick={(e) => e.stopPropagation()}
             />
           </motion.div>
