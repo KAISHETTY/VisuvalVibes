@@ -452,12 +452,20 @@ const Sponsor = () => {
                                  <span className="px-4 text-xs font-bold text-brand-gold uppercase">OR</span>
                                  <div className="flex-grow h-px bg-brand-gold/30"></div>
                              </div>
-                             {/* SPONSOR FORM - wired to Google Forms */}
+                             {/* SPONSOR FORM - silent background submission */}
                              <form
-                                  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfeGnGWeLMPa77vZnUAJiSxgXtRk_bcbnmkujojCyuUF2ucKw/formResponse"
-                                  method="POST"
-                                  target="_blank"
-                                  onSubmit={e => { setTimeout(() => { (e.target as HTMLFormElement).reset(); }, 500); }}
+                                  onSubmit={async e => {
+                                    e.preventDefault();
+                                    const form = e.target as HTMLFormElement;
+                                    const data = new FormData(form);
+                                    try {
+                                      await fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSfeGnGWeLMPa77vZnUAJiSxgXtRk_bcbnmkujojCyuUF2ucKw/formResponse", {
+                                        method: "POST", mode: "no-cors", body: data
+                                      });
+                                    } catch(_) {}
+                                    form.reset();
+                                    alert("✅ Sponsorship request submitted! We'll be in touch soon.");
+                                  }}
                                   className="space-y-4"
                              >
                                   <input type="text" name="entry.2075610549" placeholder="Brand / Business Name" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold font-body text-sm font-bold" />
@@ -555,12 +563,20 @@ const Contact = () => {
 
           <div className="funky-card p-6 sm:p-8 md:p-12 self-start bg-brand-cream border-[4px] sm:border-[6px] w-full max-w-md mx-auto lg:max-w-none">
              <h3 className="text-2xl sm:text-3xl font-display font-bold uppercase text-brand-green mb-6 sm:mb-8 text-center tracking-wide">Inquiry Form</h3>
-             {/* INQUIRY FORM - wired to Google Forms */}
+             {/* INQUIRY FORM - silent background submission */}
              <form
-                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfo1BkAtbagUkRDPVVplKnc3WRzTweW8zgxVn_b6j0xUqMLsQ/formResponse"
-                method="POST"
-                target="_blank"
-                onSubmit={e => { setTimeout(() => { (e.target as HTMLFormElement).reset(); }, 500); }}
+                onSubmit={async e => {
+                  e.preventDefault();
+                  const form = e.target as HTMLFormElement;
+                  const data = new FormData(form);
+                  try {
+                    await fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSfo1BkAtbagUkRDPVVplKnc3WRzTweW8zgxVn_b6j0xUqMLsQ/formResponse", {
+                      method: "POST", mode: "no-cors", body: data
+                    });
+                  } catch(_) {}
+                  form.reset();
+                  alert("✅ Inquiry submitted! Our team will reach out to you shortly.");
+                }}
                 className="space-y-4 sm:space-y-6"
               >
               <div>
