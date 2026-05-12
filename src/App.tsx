@@ -159,84 +159,53 @@ const UpcomingEvent = () => {
     }, []);
 
     return (
-        <section id="upcoming" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-                <img src="https://i.imgur.com/wXR5TGi.jpg" alt="MM Keeravani Concert Dallas" className="w-full h-full object-cover object-center" />
-                <div className="absolute inset-0 bg-black/65"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+        <section id="upcoming" className="relative overflow-hidden bg-black border-y-4 border-brand-gold">
+            {/* Full poster image - no overlay, let it breathe */}
+            <div className="w-full">
+                <img
+                    src="https://i.imgur.com/wXR5TGi.jpg"
+                    alt="MM Keeravani Live In Concert Dallas July 25 2026"
+                    className="w-full h-auto object-contain block"
+                    style={{ maxHeight: '90vh' }}
+                />
             </div>
-            {/* Gold border top/bottom */}
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-brand-gold to-transparent z-10"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-brand-gold to-transparent z-10"></div>
 
-            <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-24">
-                <div className="inline-flex items-center space-x-3 mb-8">
-                    <span className="w-10 h-[1px] bg-brand-gold"></span>
-                    <span className="text-brand-gold text-[10px] uppercase tracking-[0.5em] font-bold">Visuval Vibe Presents</span>
-                    <span className="w-10 h-[1px] bg-brand-gold"></span>
-                </div>
+            {/* Bottom bar with countdown + CTA */}
+            <div className="bg-black border-t-2 border-brand-gold/40 py-8 px-4">
+                <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
 
-                <h2 className="text-6xl sm:text-7xl md:text-9xl font-display font-bold text-white leading-none mb-3 drop-shadow-2xl uppercase">
-                    MM <span className="text-brand-gold italic">Keeravani</span>
-                </h2>
-                <p className="text-white/80 font-display text-xl sm:text-3xl mb-6 tracking-widest uppercase font-bold">
-                    Live In Concert — Dallas, Texas
-                </p>
-
-                <div className="flex items-center justify-center gap-4 mb-6">
-                    <span className="w-16 h-[1px] bg-brand-gold/50"></span>
-                    <span className="text-brand-gold text-xl">✦</span>
-                    <span className="w-16 h-[1px] bg-brand-gold/50"></span>
-                </div>
-
-                <p className="text-brand-gold font-body text-lg sm:text-2xl font-bold mb-3">
-                    The Oscar Maestro. The Soul of Indian Cinema.
-                </p>
-                <p className="text-white/65 font-body text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
-                    From the soul of Tollywood to the Oscars stage — MM Keeravani's music has made the world cry, cheer, and dance.
-                    Now Dallas gets its night. One evening of melodies that defined a generation. Full on Dhamaka.
-                </p>
-
-                <div className="inline-flex items-center gap-3 border-2 border-brand-gold/70 bg-black/50 backdrop-blur-md px-8 py-3 rounded-full mb-6">
-                    <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-                    <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-xs sm:text-sm">July 25, 2026 · Dallas, Texas</span>
-                    <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-                </div>
-
-                {/* Countdown */}
-                <div className="flex justify-center mt-2">
-                    <div className="inline-block border-2 border-brand-gold/30 rounded-2xl p-3 sm:p-5 bg-white/5 backdrop-blur-sm">
-                        <p className="text-[10px] sm:text-xs tracking-widest uppercase font-bold text-brand-gold mb-4 text-center">Countdown To Concert</p>
-                        <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
-                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#C9A84C]">
-                                <p className="text-2xl sm:text-4xl font-display font-bold text-white leading-none">{timeLeft.days}</p>
-                                <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-white/80">Days</p>
-                            </div>
-                            <div className="text-brand-gold font-display text-2xl sm:text-4xl font-bold self-center animate-pulse">:</div>
-                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#C9A84C]">
-                                <p className="text-2xl sm:text-4xl font-display font-bold text-white leading-none">{timeLeft.hours.toString().padStart(2, "0")}</p>
-                                <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-white/80">Hours</p>
-                            </div>
-                            <div className="text-brand-gold font-display text-2xl sm:text-4xl font-bold self-center animate-pulse">:</div>
-                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#C9A84C]">
-                                <p className="text-2xl sm:text-4xl font-display font-bold text-brand-gold leading-none">{timeLeft.minutes.toString().padStart(2, "0")}</p>
-                                <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-white/80">Mins</p>
-                            </div>
-                            <div className="text-brand-gold font-display text-2xl sm:text-4xl font-bold self-center animate-pulse">:</div>
-                            <div className="bg-brand-gold border-2 border-brand-green rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#FFFDF5]">
-                                <p className="text-2xl sm:text-4xl font-display font-bold text-brand-dark leading-none">{timeLeft.seconds.toString().padStart(2, "0")}</p>
-                                <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-brand-dark/80">Secs</p>
-                            </div>
-                        </div>
+                    {/* Presented by */}
+                    <div className="inline-flex items-center gap-3">
+                        <span className="w-8 h-[1px] bg-brand-gold"></span>
+                        <span className="text-brand-gold text-[10px] uppercase tracking-[0.5em] font-bold">Visuval Vibe Presents · July 25, 2026 · Dallas, Texas</span>
+                        <span className="w-8 h-[1px] bg-brand-gold"></span>
                     </div>
-                </div>
 
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#contact" className="bg-brand-gold text-brand-dark px-10 sm:px-14 py-4 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:bg-white transition-all duration-300 rounded-full border-2 border-brand-dark shadow-[4px_4px_0_0_#145942]">
-                        Reserve VVIP Seats
-                    </a>
-                    <span className="text-white/45 font-body italic text-sm">Limited seats · VVIP experience only</span>
+                    {/* Countdown */}
+                    <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
+                        {[
+                            { val: timeLeft.days, label: "Days" },
+                            { val: timeLeft.hours, label: "Hours" },
+                            { val: timeLeft.minutes, label: "Mins" },
+                            { val: timeLeft.seconds, label: "Secs" },
+                        ].map(({ val, label }, i) => (
+                            <div key={label} className="flex items-center gap-3 sm:gap-5">
+                                <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#C9A84C]">
+                                    <p className="text-2xl sm:text-4xl font-display font-bold text-white leading-none">{String(val).padStart(2,"0")}</p>
+                                    <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-white/80">{label}</p>
+                                </div>
+                                {i < 3 && <span className="text-brand-gold font-display text-2xl sm:text-4xl font-bold animate-pulse">:</span>}
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* CTA */}
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="#contact" className="bg-brand-gold text-brand-dark px-10 sm:px-14 py-4 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:bg-white transition-all duration-300 rounded-full border-2 border-brand-dark shadow-[4px_4px_0_0_#145942]">
+                            Reserve VVIP Seats
+                        </a>
+                        <span className="text-white/40 font-body italic text-sm">Limited seats · VVIP experience only</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -326,11 +295,11 @@ const CelebrityHospitality = () => {
 /* --- POLITICAL HOSPITALITY --- */
 const PoliticalHospitality = () => {
     const politicalImages = [
-        "https://i.imgur.com/KT9So0f.jpg",
-        "https://i.imgur.com/c5P6T82.jpg",
-        "https://i.imgur.com/SBUKdpX.jpg",
         "https://i.imgur.com/Nz1agNz.jpg",
-        "https://i.imgur.com/df3RXSs.jpg"
+        "https://i.imgur.com/df3RXSs.jpg",
+        "https://i.imgur.com/xKhGyQ2.jpg",
+        "https://i.imgur.com/AUs0dup.jpg",
+        "https://i.imgur.com/Jx3tf0b.jpg"
     ];
 
     return (
@@ -349,15 +318,42 @@ const PoliticalHospitality = () => {
                    </div>
                </div>
 
-               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-[200px] sm:auto-rows-[250px]">
-                    <div className="sm:col-span-2 sm:row-span-2 funky-card p-2 bg-white">
-                        <img src={politicalImages[0]} className="w-full h-full object-cover rounded-xl" alt="Political Jumbo"/>
+               {/* Row 1: Large feature + 2 stacked right */}
+               <div className="grid grid-cols-12 gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <div className="col-span-12 md:col-span-8 relative overflow-hidden group funky-card p-2 bg-white" style={{height: '380px'}}>
+                        <img src={politicalImages[0]} className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power Protocol Main"/>
+                        <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg">
+                            <span className="text-brand-gold text-[10px] uppercase tracking-widest font-bold">Visuval Vibe</span>
+                        </div>
                     </div>
-                    <div className="funky-card p-2 transform sm:rotate-2 hover:rotate-0 bg-brand-cream">
-                        <img src={politicalImages[1]} className="w-full h-full object-cover rounded-xl" alt="Political 1" />
+                    <div className="col-span-12 md:col-span-4 flex flex-col gap-3 sm:gap-4">
+                        <div className="relative overflow-hidden group funky-card p-2 bg-white flex-1" style={{minHeight: '180px'}}>
+                            <img src={politicalImages[1]} className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Political 1"/>
+                        </div>
+                        <div className="relative overflow-hidden group funky-card p-2 bg-white flex-1" style={{minHeight: '180px'}}>
+                            <img src={politicalImages[2]} className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Political 2"/>
+                        </div>
                     </div>
-                    <div className="funky-card p-2 transform sm:-rotate-1 hover:rotate-0 bg-brand-cream">
-                        <img src={politicalImages[2]} className="w-full h-full object-cover rounded-xl" alt="Political 2" />
+               </div>
+               {/* Row 2: 3 equal new images */}
+               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                    <div className="relative overflow-hidden group funky-card p-2 bg-white" style={{height: '220px'}}>
+                        <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full h-full object-cover object-top rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 1"/>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl flex items-end p-4">
+                            <span className="text-white text-[10px] uppercase tracking-widest font-bold">Power & Protocol</span>
+                        </div>
+                    </div>
+                    <div className="relative overflow-hidden group funky-card p-2 bg-white" style={{height: '220px'}}>
+                        <img src="https://i.imgur.com/c5P6T82.jpg" className="w-full h-full object-cover object-top rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 2"/>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl flex items-end p-4">
+                            <span className="text-white text-[10px] uppercase tracking-widest font-bold">Elite Protocol</span>
+                        </div>
+                    </div>
+                    <div className="relative overflow-hidden group funky-card p-2 bg-white" style={{height: '220px'}}>
+                        <img src="https://i.imgur.com/SBUKdpX.jpg" className="w-full h-full object-cover object-top rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 3"/>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl flex items-end p-4">
+                            <span className="text-white text-[10px] uppercase tracking-widest font-bold">Exclusive Access</span>
+                        </div>
                     </div>
                </div>
            </div>
