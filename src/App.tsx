@@ -277,13 +277,13 @@ const CelebrityHospitality = () => {
             <div className="relative w-full py-4 overflow-hidden flex flex-col gap-4 sm:gap-6 pl-4 sm:pl-0">
                 <div className="flex animate-marquee gap-4 sm:gap-6 w-max">
                     {celebImages.map((src, i) => (
-                        <div key={i} className="w-[200px] h-[200px] sm:w-[300px] md:w-[400px] sm:h-[250px] md:h-[300px] flex-shrink-0 border-4 border-brand-gold shadow-[4px_4px_0_0_#FFFDF5] sm:shadow-[6px_6px_0_0_#FFFDF5] overflow-hidden p-1 sm:p-2 bg-brand-green-light rounded-xl sm:rounded-2xl">
-                            <img src={src} className="w-full h-full object-cover rounded-lg sm:rounded-xl" alt="Celebrity Event" />
+                        <div key={i} className="w-[200px] sm:w-[300px] md:w-[400px] flex-shrink-0 border-4 border-brand-gold shadow-[4px_4px_0_0_#FFFDF5] sm:shadow-[6px_6px_0_0_#FFFDF5] overflow-hidden p-1 sm:p-2 bg-brand-green-light rounded-xl sm:rounded-2xl">
+                            <img src={src} className="w-full h-auto block rounded-lg sm:rounded-xl" alt="Celebrity Event" />
                         </div>
                     ))}
                     {celebImages.map((src, i) => (
-                        <div key={`${i}-dup`} className="w-[200px] h-[200px] sm:w-[300px] md:w-[400px] sm:h-[250px] md:h-[300px] flex-shrink-0 border-4 border-brand-gold shadow-sm overflow-hidden p-1 sm:p-2 bg-brand-green-light rounded-xl sm:rounded-2xl">
-                            <img src={src} className="w-full h-full object-cover rounded-lg sm:rounded-xl" alt="Celebrity Event" />
+                        <div key={`${i}-dup`} className="w-[200px] sm:w-[300px] md:w-[400px] flex-shrink-0 border-4 border-brand-gold shadow-sm overflow-hidden p-1 sm:p-2 bg-brand-green-light rounded-xl sm:rounded-2xl">
+                            <img src={src} className="w-full h-auto block rounded-lg sm:rounded-xl" alt="Celebrity Event" />
                         </div>
                     ))}
                 </div>
@@ -320,31 +320,31 @@ const PoliticalHospitality = () => {
 
                {/* Row 1: Large feature + 2 stacked right */}
                <div className="grid grid-cols-12 gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <div className="col-span-12 md:col-span-8 relative overflow-hidden group funky-card p-2 bg-white" style={{height: '380px'}}>
-                        <img src={politicalImages[0]} className="w-full h-full rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectFit:'cover', objectPosition:'top'}} alt="Power Protocol Main"/>
+                    <div className="col-span-12 md:col-span-8 relative overflow-hidden group funky-card p-2 bg-white">
+                        <img src={politicalImages[0]} className="w-full h-auto rounded-xl transition-transform duration-700 group-hover:scale-105 block" alt="Power Protocol Main"/>
                         <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg">
                             <span className="text-brand-gold text-[10px] uppercase tracking-widest font-bold">Visuval Vibe</span>
                         </div>
                     </div>
                     <div className="col-span-12 md:col-span-4 flex flex-col gap-3 sm:gap-4">
-                        <div className="relative overflow-hidden group funky-card p-2 bg-white flex-1" style={{minHeight: '180px'}}>
-                            <img src={politicalImages[1]} className="w-full h-full rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectFit:'contain', background:'#f5f0e8'}} alt="Political 1"/>
+                        <div className="relative overflow-hidden group funky-card p-2 bg-white">
+                            <img src={politicalImages[1]} className="w-full h-auto rounded-xl transition-transform duration-700 group-hover:scale-105 block" alt="Political 1"/>
                         </div>
-                        <div className="relative overflow-hidden group funky-card p-2 bg-white flex-1" style={{minHeight: '180px'}}>
-                            <img src={politicalImages[2]} className="w-full h-full rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectFit:'contain', background:'#f5f0e8'}} alt="Political 2"/>
+                        <div className="relative overflow-hidden group funky-card p-2 bg-white">
+                            <img src={politicalImages[2]} className="w-full h-auto rounded-xl transition-transform duration-700 group-hover:scale-105 block" alt="Political 2"/>
                         </div>
                     </div>
                </div>
-               {/* Row 2: 3 equal new images - tall enough to show full faces */}
+               {/* Row 2: 3 equal new images */}
                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="relative overflow-hidden group funky-card p-2 bg-white">
-                        <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full rounded-xl transition-transform duration-700 group-hover:scale-105" style={{height:'320px', objectFit:'contain', background:'#f5f0e8'}} alt="Power 1"/>
+                        <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full h-auto rounded-xl transition-transform duration-700 group-hover:scale-105 block" alt="Power 1"/>
                     </div>
                     <div className="relative overflow-hidden group funky-card p-2 bg-white">
-                        <img src="https://i.imgur.com/c5P6T82.jpg" className="w-full rounded-xl transition-transform duration-700 group-hover:scale-105" style={{height:'320px', objectFit:'contain', background:'#f5f0e8'}} alt="Power 2"/>
+                        <img src="https://i.imgur.com/c5P6T82.jpg" className="w-full h-auto rounded-xl transition-transform duration-700 group-hover:scale-105 block" alt="Power 2"/>
                     </div>
                     <div className="relative overflow-hidden group funky-card p-2 bg-white">
-                        <img src="https://i.imgur.com/SBUKdpX.jpg" className="w-full rounded-xl transition-transform duration-700 group-hover:scale-105" style={{height:'320px', objectFit:'contain', background:'#f5f0e8'}} alt="Power 3"/>
+                        <img src="https://i.imgur.com/SBUKdpX.jpg" className="w-full h-auto rounded-xl transition-transform duration-700 group-hover:scale-105 block" alt="Power 3"/>
                     </div>
                </div>
            </div>
@@ -525,7 +525,7 @@ const Gallery = () => {
           {images.map((img, i) => (
              <div key={i} className={`group relative bg-brand-ivory border-[3px] sm:border-4 border-brand-green p-2 sm:p-3 shadow-[4px_4px_0_0_#C9A84C] sm:shadow-[8px_8px_0_0_#C9A84C] hover:shadow-[8px_8px_0_0_#145942] hover:-translate-y-2 transition-all rounded-xl sm:rounded-2xl transform ${img.style}`}>
                <div className="relative overflow-hidden rounded-lg sm:rounded-xl border-2 border-brand-green/20">
-                 <img src={img.src} alt={img.alt} className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105" />
+                 <img src={img.src} alt={img.alt} className="w-full h-auto block transition-transform duration-700 group-hover:scale-105" />
                </div>
              </div>
           ))}
