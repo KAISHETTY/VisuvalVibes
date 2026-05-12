@@ -24,7 +24,7 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
           {/* Contact Info */}
           <div>
             <h2 className="text-4xl font-display text-brand-green mb-10">Direct Access</h2>
@@ -34,8 +34,8 @@ export default function Contact() {
                   <MapPin className="text-brand-green w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xs uppercase font-bold tracking-widest text-brand-gold mb-3">Corporate Headquarters</h3>
-                  <p className="text-brand-dark/80 font-sans text-lg leading-relaxed">Level 4, Premium Towers<br/>Jubilee Hills, Hyderabad<br/>Telangana, India 500033</p>
+                  <h3 className="text-xs uppercase font-bold tracking-widest text-brand-gold mb-3">Headquarters</h3>
+                  <p className="text-brand-dark/80 font-sans text-lg leading-relaxed">Dallas, Texas, USA</p>
                 </div>
               </div>
 
@@ -45,8 +45,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs uppercase font-bold tracking-widest text-brand-gold mb-3">VVIP Hotline</h3>
-                  <p className="text-brand-dark/80 font-sans text-lg mb-1">+91 98765 43210</p>
-                  <p className="text-brand-dark/80 font-sans text-lg">+91 98765 43211</p>
+                  <p className="text-brand-dark/80 font-sans text-lg">Available on request</p>
                 </div>
               </div>
 
@@ -56,8 +55,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-xs uppercase font-bold tracking-widest text-brand-gold mb-3">Priority Email</h3>
-                  <p className="text-brand-dark/80 font-sans text-lg mb-1">vvip@vaibhavevents.com</p>
-                  <p className="text-brand-dark/80 font-sans text-lg">events@vaibhavevents.com</p>
+                  <p className="text-brand-dark/80 font-sans text-lg">visuvalvibe@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -84,12 +82,10 @@ export default function Contact() {
                   <input type="tel" required className="w-full bg-brand-ivory border border-brand-gold/30 px-4 py-3 text-brand-dark focus:outline-none focus:border-brand-green transition-colors font-sans" onChange={e => setFormData({...formData, phone: e.target.value})} />
                 </div>
               </div>
-
               <div>
                 <label className="block text-xs uppercase tracking-widest text-brand-dark/70 mb-2 font-bold">Email Address *</label>
                 <input type="email" required className="w-full bg-brand-ivory border border-brand-gold/30 px-4 py-3 text-brand-dark focus:outline-none focus:border-brand-green transition-colors font-sans" onChange={e => setFormData({...formData, email: e.target.value})} />
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label className="block text-xs uppercase tracking-widest text-brand-dark/70 mb-2 font-bold">Event Type *</label>
@@ -100,6 +96,7 @@ export default function Contact() {
                     <option value="vvip">VVIP Hospitality</option>
                     <option value="traditional">Traditional Function</option>
                     <option value="corporate">Corporate / Political</option>
+                    <option value="concert">Concert / Live Show</option>
                   </select>
                 </div>
                 <div>
@@ -107,12 +104,10 @@ export default function Contact() {
                   <input type="date" className="w-full bg-brand-ivory border border-brand-gold/30 px-4 py-3 text-brand-dark focus:outline-none focus:border-brand-green transition-colors font-sans" onChange={e => setFormData({...formData, date: e.target.value})} />
                 </div>
               </div>
-
               <div>
                 <label className="block text-xs uppercase tracking-widest text-brand-dark/70 mb-2 font-bold">Event Requirements</label>
                 <textarea rows={4} className="w-full bg-brand-ivory border border-brand-gold/30 px-4 py-3 text-brand-dark focus:outline-none focus:border-brand-green transition-colors font-sans resize-none" onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
               </div>
-
               <button type="submit" className="w-full bg-brand-green text-white font-bold uppercase tracking-widest text-xs py-5 hover:bg-brand-gold hover:text-brand-dark transition-colors flex justify-center items-center shadow-md">
                 <span>Submit Inquiry</span>
                 <Send size={16} className="ml-3" />
