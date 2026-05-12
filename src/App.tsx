@@ -137,7 +137,7 @@ const Ticker = () => {
   );
 };
 
-/* --- UPCOMING EVENT (NEW) --- */
+/* --- UPCOMING EVENT --- */
 const UpcomingEvent = () => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -160,7 +160,6 @@ const UpcomingEvent = () => {
 
     return (
         <section id="upcoming" className="relative overflow-hidden bg-black border-y-4 border-brand-gold">
-            {/* Full poster image - no overlay, let it breathe */}
             <div className="w-full">
                 <img
                     src="https://i.imgur.com/wXR5TGi.jpg"
@@ -169,19 +168,13 @@ const UpcomingEvent = () => {
                     style={{ maxHeight: '90vh' }}
                 />
             </div>
-
-            {/* Bottom bar with countdown + CTA */}
             <div className="bg-black border-t-2 border-brand-gold/40 py-8 px-4">
                 <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
-
-                    {/* Presented by */}
                     <div className="inline-flex items-center gap-3">
                         <span className="w-8 h-[1px] bg-brand-gold"></span>
                         <span className="text-brand-gold text-[10px] uppercase tracking-[0.5em] font-bold">Visuval Vibe Presents · July 25, 2026 · Dallas, Texas</span>
                         <span className="w-8 h-[1px] bg-brand-gold"></span>
                     </div>
-
-                    {/* Countdown */}
                     <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
                         {[
                             { val: timeLeft.days, label: "Days" },
@@ -198,8 +191,6 @@ const UpcomingEvent = () => {
                             </div>
                         ))}
                     </div>
-
-                    {/* CTA */}
                     <div className="flex flex-col sm:flex-row items-center gap-4">
                         <a href="#contact" className="bg-brand-gold text-brand-dark px-10 sm:px-14 py-4 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:bg-white transition-all duration-300 rounded-full border-2 border-brand-dark shadow-[4px_4px_0_0_#145942]">
                             Reserve VVIP Seats
@@ -273,7 +264,6 @@ const CelebrityHospitality = () => {
                     From A-list movie stars to global icons. We manage extreme crowds, Z-Level secure transport, and absolute media blackouts. The top 1% trust us implicitly.
                 </p>
             </div>
-            
             <div className="relative w-full py-4 overflow-hidden flex flex-col gap-4 sm:gap-6 pl-4 sm:pl-0">
                 <div className="flex animate-marquee gap-4 sm:gap-6 w-max">
                     {celebImages.map((src, i) => (
@@ -317,8 +307,6 @@ const PoliticalHospitality = () => {
                        </p>
                    </div>
                </div>
-
-               {/* Row 1: Large feature + 2 stacked right */}
                <div className="grid grid-cols-12 gap-3 sm:gap-4 mb-3 sm:mb-4">
                     <div className="col-span-12 md:col-span-8 relative overflow-hidden group funky-card p-2 bg-white h-72 sm:h-96">
                         <img src={politicalImages[0]} className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:'center 35%'}} alt="Power Protocol Main"/>
@@ -335,7 +323,6 @@ const PoliticalHospitality = () => {
                         </div>
                     </div>
                </div>
-               {/* Row 2: 3 equal new images */}
                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="relative overflow-hidden group funky-card p-2 bg-white h-56">
                         <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:'center 20%'}} alt="Power 1"/>
@@ -360,10 +347,7 @@ const Services = () => {
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-brand-green mb-4 sm:mb-6 uppercase">Signature <span className="text-brand-gold">Vibes</span></h2>
         <p className="font-body text-lg sm:text-xl font-bold text-brand-dark/70">Orchestrating absolute perfection.</p>
       </div>
-
       <div className="max-w-7xl mx-auto px-4 lg:px-8 space-y-12 sm:space-y-16 relative z-20">
-        
-        {/* Royal Weddings */}
         <div className="funky-card p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row gap-8 sm:gap-12 items-center">
           <div className="lg:w-1/2 order-2 lg:order-1 text-center lg:text-left">
             <h3 className="text-3xl sm:text-4xl font-display font-bold text-brand-green mb-4 uppercase">Big Fat Indian Weddings</h3>
@@ -388,12 +372,9 @@ const Services = () => {
             </div>
           </div>
         </div>
-
-        {/* Cinematic Launches (UPDATED IMAGE) */}
         <div className="funky-card p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row gap-8 sm:gap-12 items-center bg-brand-green text-white border-brand-gold">
           <div className="lg:w-1/2 w-full">
             <div className="rounded-2xl overflow-hidden border-4 border-white shadow-[6px_6px_0_0_#C9A84C] bg-brand-cream p-2 w-full max-w-sm sm:max-w-md mx-auto">
-              {/* IMAGE UPDATED as requested */}
               <img src="https://i.imgur.com/WCHTvpY.jpg" alt="Cinematic Launch" className="w-full h-48 sm:h-64 object-cover rounded-xl" />
             </div>
           </div>
@@ -415,19 +396,17 @@ const Services = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
 };
 
-/* --- SPONSOR (NEW SECTION) --- */
+/* --- SPONSOR --- */
 const Sponsor = () => {
     return (
         <section id="sponsor" className="py-16 sm:py-24 bg-brand-ivory relative border-b-4 border-brand-green">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row gap-10 sm:gap-16 items-center">
-                    
                     <div className="lg:w-1/2 text-center lg:text-left">
                         <div className="inline-block bg-brand-pop text-white font-bold px-4 py-1 uppercase tracking-widest text-[10px] sm:text-xs rounded-full mb-6 transform -rotate-1 shadow-[2px_2px_0_0_#145942] border-2 border-brand-green">
                            Grow Your Brand
@@ -442,7 +421,6 @@ const Sponsor = () => {
                             Sponsor one of our exclusive events featuring celebrities, politicians, and public figures — and put your brand in front of a massive, highly-engaged audience. 
                             It's not just an event, it's an opportunity to dominate.
                         </p>
-
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 text-left">
                              {[
                                  {icon: <Users size={20}/>, text: "Reach a massive targeted audience"},
@@ -458,11 +436,9 @@ const Sponsor = () => {
                         </div>
                         <p className="text-[10px] sm:text-xs uppercase font-bold tracking-widest text-brand-pop mb-4">Limited spots per event</p>
                     </div>
-
                     <div className="lg:w-1/2 w-full">
                         <div className="funky-card bg-brand-cream border-[4px] sm:border-[6px] border-brand-green p-6 sm:p-10">
                              <h3 className="text-2xl sm:text-3xl font-display font-bold uppercase text-brand-green mb-6 text-center">Claim Your Spot</h3>
-                             
                              <div className="space-y-4">
                                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="w-full flex items-center justify-center p-4 bg-[#25D366] text-white rounded-xl border-2 border-brand-green shadow-[4px_4px_0_0_#145942] hover:-translate-y-1 transition-all font-bold uppercase tracking-wide text-sm sm:text-base">
                                      <MessageCircle size={20} className="mr-3"/> Message Us (WhatsApp)
@@ -471,29 +447,32 @@ const Sponsor = () => {
                                      <Phone size={20} className="mr-3"/> Call Us
                                  </a>
                              </div>
-
                              <div className="my-6 flex items-center">
                                  <div className="flex-grow h-px bg-brand-gold/30"></div>
                                  <span className="px-4 text-xs font-bold text-brand-gold uppercase">OR</span>
                                  <div className="flex-grow h-px bg-brand-gold/30"></div>
                              </div>
-
-                             <form onSubmit={e => { e.preventDefault(); alert('Sponsorship request submitted. We will review and connect shortly!'); }} className="space-y-4">
-                                  <input type="text" placeholder="Brand / Business Name" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold font-body text-sm font-bold" />
-                                  <input type="email" placeholder="Email Address" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold font-body text-sm font-bold" />
+                             {/* SPONSOR FORM - wired to Google Forms */}
+                             <form
+                                  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfeGnGWeLMPa77vZnUAJiSxgXtRk_bcbnmkujojCyuUF2ucKw/formResponse"
+                                  method="POST"
+                                  target="_blank"
+                                  onSubmit={e => { setTimeout(() => { (e.target as HTMLFormElement).reset(); }, 500); }}
+                                  className="space-y-4"
+                             >
+                                  <input type="text" name="entry.2075610549" placeholder="Brand / Business Name" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold font-body text-sm font-bold" />
+                                  <input type="email" name="entry.1763421740" placeholder="Email Address" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold font-body text-sm font-bold" />
                                   <button type="submit" className="w-full bg-brand-gold text-brand-dark font-bold uppercase tracking-widest text-sm py-4 rounded-xl border-2 border-brand-dark shadow-[4px_4px_0_0_#145942] hover:-translate-y-1 transition-all">
                                       Send Request
                                   </button>
                              </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
     );
 };
-// Quick dummy icon
 const Globe = ({size}: any) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>;
 
 /* --- GALLERY --- */
@@ -520,7 +499,6 @@ const Gallery = () => {
           </div>
           <Smile className="hidden md:block w-16 h-16 text-brand-gold animate-spin-slow" style={{ animationDuration: '8s' }} />
         </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-sm sm:max-w-none mx-auto">
           {images.map((img, i) => (
              <div key={i} className={`group relative bg-brand-ivory border-[3px] sm:border-4 border-brand-green p-2 sm:p-3 shadow-[4px_4px_0_0_#C9A84C] sm:shadow-[8px_8px_0_0_#C9A84C] hover:shadow-[8px_8px_0_0_#145942] hover:-translate-y-2 transition-all rounded-xl sm:rounded-2xl transform ${img.style}`}>
@@ -535,18 +513,15 @@ const Gallery = () => {
   );
 };
 
-
 /* --- CONTACT --- */
 const Contact = () => {
   return (
     <section id="contact" className="py-16 sm:py-24 bg-brand-ivory relative">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
-          
           <div className="text-center lg:text-left">
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold uppercase text-brand-green mb-6 sm:mb-8 leading-tight">Drop a <span className="text-brand-gold">Line.</span></h2>
             <p className="text-lg sm:text-xl text-brand-dark/70 font-body font-bold mb-8 sm:mb-12">Dallas based. Operating globally. Hit us up.</p>
-            
             <div className="space-y-4 sm:space-y-6 max-w-sm mx-auto lg:mx-0">
               <a href={`tel:${PHONE_NUMBER.replace(/[^\d+]/g, '')}`} className="flex items-center bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-brand-green shadow-[4px_4px_0_0_#C9A84C] transform sm:rotate-1 hover:rotate-0 transition-transform group cursor-pointer text-left">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-brand-green flex items-center justify-center shrink-0 mr-4 sm:mr-6 rounded-lg sm:rounded-xl border border-brand-gold/20 group-hover:bg-brand-gold transition-colors">
@@ -557,7 +532,6 @@ const Contact = () => {
                   <p className="text-brand-green font-display font-bold text-lg sm:text-xl">{PHONE_NUMBER}</p>
                 </div>
               </a>
-
               <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex items-center bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-[#25D366] shadow-[4px_4px_0_0_#25D366] transform sm:-rotate-1 hover:rotate-0 transition-transform group cursor-pointer text-left">
                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] flex items-center justify-center shrink-0 mr-4 sm:mr-6 rounded-lg sm:rounded-xl border border-white/50 group-hover:scale-105 transition-transform">
                    <MessageCircle className="text-white w-5 h-5 sm:w-6 sm:h-6" fill="white" />
@@ -567,8 +541,7 @@ const Contact = () => {
                    <p className="text-[#25D366] font-display font-bold text-lg sm:text-xl">WhatsApp Us</p>
                  </div>
               </a>
-              
-               <div className="flex items-center bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-brand-green shadow-[4px_4px_0_0_#C9A84C] transform sm:rotate-1 hover:rotate-0 transition-transform text-left">
+              <div className="flex items-center bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-brand-green shadow-[4px_4px_0_0_#C9A84C] transform sm:rotate-1 hover:rotate-0 transition-transform text-left">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-brand-green flex items-center justify-center shrink-0 mr-4 sm:mr-6 rounded-lg sm:rounded-xl border border-brand-gold/20">
                   <Mail className="text-brand-gold w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
@@ -582,21 +555,28 @@ const Contact = () => {
 
           <div className="funky-card p-6 sm:p-8 md:p-12 self-start bg-brand-cream border-[4px] sm:border-[6px] w-full max-w-md mx-auto lg:max-w-none">
              <h3 className="text-2xl sm:text-3xl font-display font-bold uppercase text-brand-green mb-6 sm:mb-8 text-center tracking-wide">Inquiry Form</h3>
-             <form onSubmit={e => { e.preventDefault(); alert('Inquiry submitted!'); }} className="space-y-4 sm:space-y-6">
+             {/* INQUIRY FORM - wired to Google Forms */}
+             <form
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfo1BkAtbagUkRDPVVplKnc3WRzTweW8zgxVn_b6j0xUqMLsQ/formResponse"
+                method="POST"
+                target="_blank"
+                onSubmit={e => { setTimeout(() => { (e.target as HTMLFormElement).reset(); }, 500); }}
+                className="space-y-4 sm:space-y-6"
+              >
               <div>
-                <input type="text" placeholder="Full Name *" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 sm:py-4 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all font-body text-base sm:text-lg font-bold" />
+                <input type="text" name="entry.309188563" placeholder="Full Name *" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 sm:py-4 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all font-body text-base sm:text-lg font-bold" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                <input type="email" placeholder="Email *" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 sm:py-4 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all font-body text-base sm:text-lg font-bold" />
-                <input type="tel" placeholder="Phone *" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 sm:py-4 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all font-body text-base sm:text-lg font-bold" />
+                <input type="email" name="entry.2123699389" placeholder="Email *" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 sm:py-4 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all font-body text-base sm:text-lg font-bold" />
+                <input type="tel" name="entry.454672993" placeholder="Phone *" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 sm:py-4 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all font-body text-base sm:text-lg font-bold" />
               </div>
               <div>
-                <select required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 sm:py-4 text-brand-dark appearance-none focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all font-body text-base sm:text-lg font-bold">
+                <select name="entry.517195690" required className="w-full bg-white border-2 border-brand-green rounded-xl px-4 py-3 sm:py-4 text-brand-dark appearance-none focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all font-body text-base sm:text-lg font-bold">
                   <option value="">Select Event Type</option>
-                  <option value="wedding">Indian Wedding</option>
-                  <option value="movie">Movie Launch</option>
-                  <option value="vvip">VVIP/Political</option>
-                  <option value="sponsor">Sponsorship</option>
+                  <option value="Indian Wedding">Indian Wedding</option>
+                  <option value="Movie Launch">Movie Launch</option>
+                  <option value="VVIP/Political">VVIP/Political</option>
+                  <option value="Sponsorship">Sponsorship</option>
                 </select>
               </div>
               <button type="submit" className="w-full bg-brand-green text-white font-bold uppercase tracking-widest text-base sm:text-lg py-4 sm:py-5 rounded-xl hover:bg-white hover:text-brand-green border-[3px] border-brand-green shadow-[4px_4px_0_0_#C9A84C] hover:-translate-y-1 transition-all flex justify-center items-center mt-2 sm:mt-4">
@@ -616,10 +596,8 @@ const Footer = () => {
     <footer className="bg-brand-green pt-16 sm:pt-24 pb-8 text-white border-t-8 border-brand-gold relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-green-light/20 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-gold/10 rounded-full blur-[80px] pointer-events-none"></div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-b-2 border-brand-gold/50 pb-12 sm:pb-16 mb-8 mt-4">
-          
           <div className="lg:col-span-2">
              <div className="bg-brand-ivory p-3 sm:p-5 rounded-3xl mb-6 shadow-[4px_4px_0_0_#C9A84C] inline-block border-2 sm:border-4 border-brand-gold">
                 <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-12 sm:h-16 lg:h-20 w-auto object-contain" />
@@ -632,7 +610,6 @@ const Footer = () => {
                  Specializing in extreme luxury, VVIP hospitality, and massive Indian cinematic events.
              </p>
           </div>
-
           <div>
              <h4 className="text-brand-gold font-display font-bold text-xl mb-6 uppercase tracking-widest border-l-4 border-brand-gold pl-3">Quick Links</h4>
              <ul className="space-y-4 text-white/80 font-bold uppercase text-xs tracking-widest">
@@ -643,7 +620,6 @@ const Footer = () => {
                  <li><a href="#sponsor" className="hover:text-brand-pop transition-colors inline-block hover:translate-x-2 transform duration-200">Sponsor An Event</a></li>
              </ul>
           </div>
-
           <div>
             <h4 className="text-brand-gold font-display font-bold text-xl mb-6 uppercase tracking-widest border-l-4 border-brand-gold pl-3">Hit Us Up</h4>
             <div className="space-y-4">
@@ -659,14 +635,12 @@ const Footer = () => {
                     <Mail className="w-5 h-5 text-brand-gold mr-3 shrink-0" />
                     <a href="mailto:visuvalvibe@gmail.com" className="text-white/80 font-bold text-sm hover:text-brand-gold transition-colors block border-b border-brand-gold/30 pb-1">visuvalvibe@gmail.com</a>
                 </div>
-                
                 <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center px-6 py-3 bg-[#25D366] text-white rounded-full shadow-[2px_2px_0_0_#FFFDF5] hover:-translate-y-1 transition-all text-xs uppercase font-bold tracking-widest border-2 border-white">
                   <MessageCircle size={18} fill="white" className="mr-2" /> Start WhatsApp Chat
                 </a>
             </div>
           </div>
         </div>
-
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left text-[10px] sm:text-xs tracking-widest uppercase font-bold text-white/50 pt-4">
           <p className="mb-4 md:mb-0">&copy; {new Date().getFullYear()} Visuval Vibe LLC. Engineered in Dallas.</p>
           <div className="flex space-x-6">
@@ -709,8 +683,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-
-      {/* WhatsApp Fixed Button (Right side, Mobile optimized) */}
       <a 
         href={WHATSAPP_LINK}
         target="_blank" rel="noreferrer"
