@@ -321,7 +321,7 @@ const PoliticalHospitality = () => {
                {/* Row 1: Large feature + 2 stacked right */}
                <div className="grid grid-cols-12 gap-3 sm:gap-4 mb-3 sm:mb-4">
                     <div className="col-span-12 md:col-span-8 relative overflow-hidden group funky-card p-2 bg-white h-72 sm:h-96">
-                        <img src={politicalImages[0]} className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power Protocol Main"/>
+                        <img src={politicalImages[0]} className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:'center 35%'}} alt="Power Protocol Main"/>
                         <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg">
                             <span className="text-brand-gold text-[10px] uppercase tracking-widest font-bold">Visuval Vibe</span>
                         </div>
@@ -338,7 +338,7 @@ const PoliticalHospitality = () => {
                {/* Row 2: 3 equal new images */}
                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="relative overflow-hidden group funky-card p-2 bg-white h-56">
-                        <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 1"/>
+                        <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:'center 40%'}} alt="Power 1"/>
                     </div>
                     <div className="relative overflow-hidden group funky-card p-2 bg-white h-56">
                         <img src="https://i.imgur.com/c5P6T82.jpg" className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 2"/>
