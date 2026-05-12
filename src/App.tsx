@@ -139,17 +139,13 @@ const Ticker = () => {
 
 /* --- UPCOMING EVENT (NEW) --- */
 const UpcomingEvent = () => {
-    // Generate a future date for the countdown
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
     useEffect(() => {
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 45); // 45 days from now
-        
+        const targetDate = new Date("2026-07-25T20:00:00");
         const interval = setInterval(() => {
             const now = new Date();
             const difference = targetDate.getTime() - now.getTime();
-            
             if (difference > 0) {
                 setTimeLeft({
                     days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -163,73 +159,84 @@ const UpcomingEvent = () => {
     }, []);
 
     return (
-        <section id="upcoming" className="py-16 sm:py-24 bg-brand-ivory border-b-4 border-brand-green overflow-hidden relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Changed background from green to a dark contrasting panel with green border */}
-                <div className="funky-card-dark p-6 sm:p-12 relative z-10 text-center border-brand-green border-[6px]">
-                    {/* Add subtle background glow inside the black card */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-green-light/20 blur-3xl rounded-full"></div>
-                    
-                    <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20">
-                         <span className="bg-brand-pop text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest py-1.5 px-4 rounded-full pulse-badge border-2 border-white shadow-sm">
-                            Coming Soon
-                         </span>
-                    </div>
-                    
-                    <div className="mt-10 mb-6 relative z-20">
-                         <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-bold uppercase tracking-tight text-brand-gold mb-2 drop-shadow-md">
-                             Telugu Celebrities
-                         </h2>
-                         {/* Text colors adjusted to pure white for perfect contrast against the dark background */}
-                         <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold uppercase tracking-tight mb-4 text-white">
-                             Cricket Match <span className="text-white/60 italic">— Dallas</span>
-                         </h2>
-                    </div>
-                    {/* Darkened text color up to full white for readability */}
-                    <p className="text-lg sm:text-xl text-white font-body font-medium mb-10 max-w-2xl mx-auto relative z-20">
-                        Get ready for the biggest celebrity face-off! We are bringing the stars to Texas. Stay tuned. Venue and date dropping soon.
-                    </p>
-                    
-                    <div className="flex justify-center -space-x-3 sm:-space-x-4 mb-10 relative z-20">
-                         {["https://i.imgur.com/zDXVSZz.jpg", "https://i.imgur.com/xQvr2g7.jpg", "https://i.imgur.com/SXyDmPV.jpg", "https://i.imgur.com/g5I7rZ9.jpg"].map((src, i) => (
-                             <img key={i} src={src} className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-4 border-brand-green object-cover shadow-md" alt="Celeb" />
-                         ))}
-                         <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-4 border-brand-green bg-brand-gold flex items-center justify-center font-bold text-brand-dark shadow-md">
-                             +10
-                         </div>
-                    </div>
+        <section id="upcoming" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+                <img src="https://i.imgur.com/wXR5TGi.jpg" alt="MM Keeravani Concert Dallas" className="w-full h-full object-cover object-center" />
+                <div className="absolute inset-0 bg-black/65"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+            </div>
+            {/* Gold border top/bottom */}
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-brand-gold to-transparent z-10"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-brand-gold to-transparent z-10"></div>
 
-                    {/* Active Live Countdown Timer */}
-                    <div className="flex justify-center mt-4">
-                      <div className="inline-block border-2 border-brand-gold/30 rounded-2xl p-2 sm:p-4 bg-white/5 backdrop-blur-sm relative z-20">
-                        <p className="text-[10px] sm:text-xs tracking-widest uppercase font-bold text-brand-gold mb-3 text-center">Countdown To Announcement</p>
-                        <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
-                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 shadow-[2px_2px_0_0_#FFFDF5] text-center">
+            <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-24">
+                <div className="inline-flex items-center space-x-3 mb-8">
+                    <span className="w-10 h-[1px] bg-brand-gold"></span>
+                    <span className="text-brand-gold text-[10px] uppercase tracking-[0.5em] font-bold">Visuval Vibe Presents</span>
+                    <span className="w-10 h-[1px] bg-brand-gold"></span>
+                </div>
+
+                <h2 className="text-6xl sm:text-7xl md:text-9xl font-display font-bold text-white leading-none mb-3 drop-shadow-2xl uppercase">
+                    MM <span className="text-brand-gold italic">Keeravani</span>
+                </h2>
+                <p className="text-white/80 font-display text-xl sm:text-3xl mb-6 tracking-widest uppercase font-bold">
+                    Live In Concert — Dallas, Texas
+                </p>
+
+                <div className="flex items-center justify-center gap-4 mb-6">
+                    <span className="w-16 h-[1px] bg-brand-gold/50"></span>
+                    <span className="text-brand-gold text-xl">✦</span>
+                    <span className="w-16 h-[1px] bg-brand-gold/50"></span>
+                </div>
+
+                <p className="text-brand-gold font-body text-lg sm:text-2xl font-bold mb-3">
+                    The Oscar Maestro. The Soul of Indian Cinema.
+                </p>
+                <p className="text-white/65 font-body text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
+                    From the soul of Tollywood to the Oscars stage — MM Keeravani's music has made the world cry, cheer, and dance.
+                    Now Dallas gets its night. One evening of melodies that defined a generation. Full on Dhamaka.
+                </p>
+
+                <div className="inline-flex items-center gap-3 border-2 border-brand-gold/70 bg-black/50 backdrop-blur-md px-8 py-3 rounded-full mb-6">
+                    <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                    <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-xs sm:text-sm">July 25, 2026 · Dallas, Texas</span>
+                    <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                </div>
+
+                {/* Countdown */}
+                <div className="flex justify-center mt-2">
+                    <div className="inline-block border-2 border-brand-gold/30 rounded-2xl p-3 sm:p-5 bg-white/5 backdrop-blur-sm">
+                        <p className="text-[10px] sm:text-xs tracking-widest uppercase font-bold text-brand-gold mb-4 text-center">Countdown To Concert</p>
+                        <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
+                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#C9A84C]">
                                 <p className="text-2xl sm:text-4xl font-display font-bold text-white leading-none">{timeLeft.days}</p>
                                 <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-white/80">Days</p>
                             </div>
                             <div className="text-brand-gold font-display text-2xl sm:text-4xl font-bold self-center animate-pulse">:</div>
-                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 shadow-[2px_2px_0_0_#FFFDF5] text-center">
-                                <p className="text-2xl sm:text-4xl font-display font-bold text-white leading-none">{timeLeft.hours.toString().padStart(2, '0')}</p>
+                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#C9A84C]">
+                                <p className="text-2xl sm:text-4xl font-display font-bold text-white leading-none">{timeLeft.hours.toString().padStart(2, "0")}</p>
                                 <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-white/80">Hours</p>
                             </div>
                             <div className="text-brand-gold font-display text-2xl sm:text-4xl font-bold self-center animate-pulse">:</div>
-                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 shadow-[2px_2px_0_0_#FFFDF5] text-center">
-                                <p className="text-2xl sm:text-4xl font-display font-bold text-brand-gold leading-none">{timeLeft.minutes.toString().padStart(2, '0')}</p>
+                            <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#C9A84C]">
+                                <p className="text-2xl sm:text-4xl font-display font-bold text-brand-gold leading-none">{timeLeft.minutes.toString().padStart(2, "0")}</p>
                                 <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-white/80">Mins</p>
                             </div>
-                             <div className="text-brand-gold font-display text-2xl sm:text-4xl font-bold self-center animate-pulse">:</div>
-                            <div className="bg-brand-gold border-2 border-brand-green rounded-xl p-3 sm:p-5 w-16 sm:w-24 shadow-[2px_2px_0_0_#FFFDF5] text-center">
-                                <p className="text-2xl sm:text-4xl font-display font-bold text-brand-dark leading-none">{timeLeft.seconds.toString().padStart(2, '0')}</p>
+                            <div className="text-brand-gold font-display text-2xl sm:text-4xl font-bold self-center animate-pulse">:</div>
+                            <div className="bg-brand-gold border-2 border-brand-green rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#FFFDF5]">
+                                <p className="text-2xl sm:text-4xl font-display font-bold text-brand-dark leading-none">{timeLeft.seconds.toString().padStart(2, "0")}</p>
                                 <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-brand-dark/80">Secs</p>
                             </div>
                         </div>
-                      </div>
                     </div>
+                </div>
 
-                    <a href="#sponsor" className="inline-block relative z-20 mt-8 sm:mt-12 text-brand-gold uppercase text-[10px] sm:text-xs font-bold tracking-widest border-b-2 border-brand-gold hover:text-white hover:border-white transition-colors">
-                        Want to sponsor this event?
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contact" className="bg-brand-gold text-brand-dark px-10 sm:px-14 py-4 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:bg-white transition-all duration-300 rounded-full border-2 border-brand-dark shadow-[4px_4px_0_0_#145942]">
+                        Reserve VVIP Seats
                     </a>
+                    <span className="text-white/45 font-body italic text-sm">Limited seats · VVIP experience only</span>
                 </div>
             </div>
         </section>
@@ -274,6 +281,10 @@ const About = () => {
 /* --- CELEBRITY HOSPITALITY --- */
 const CelebrityHospitality = () => {
     const celebImages = [
+        "https://i.imgur.com/SVKdIjf.jpg",
+        "https://i.imgur.com/Iu5CyKt.jpg",
+        "https://i.imgur.com/FDPVQwP.jpg",
+        "https://i.imgur.com/QHqmyr0.jpg",
         "https://i.imgur.com/zDXVSZz.jpg",
         "https://i.imgur.com/xQvr2g7.jpg",
         "https://i.imgur.com/SXyDmPV.jpg",
@@ -315,11 +326,11 @@ const CelebrityHospitality = () => {
 /* --- POLITICAL HOSPITALITY --- */
 const PoliticalHospitality = () => {
     const politicalImages = [
+        "https://i.imgur.com/KT9So0f.jpg",
+        "https://i.imgur.com/c5P6T82.jpg",
+        "https://i.imgur.com/SBUKdpX.jpg",
         "https://i.imgur.com/Nz1agNz.jpg",
-        "https://i.imgur.com/df3RXSs.jpg",
-        "https://i.imgur.com/xKhGyQ2.jpg",
-        "https://i.imgur.com/AUs0dup.jpg",
-        "https://i.imgur.com/Jx3tf0b.jpg"
+        "https://i.imgur.com/df3RXSs.jpg"
     ];
 
     return (
@@ -501,12 +512,15 @@ const Globe = ({size}: any) => <svg width={size} height={size} viewBox="0 0 24 2
 /* --- GALLERY --- */
 const Gallery = () => {
   const images = [
-    { src: "https://i.imgur.com/XHOrKVS.jpg", alt: "Spectacle", style: "sm:rotate-1" },
-    { src: "https://i.imgur.com/zDXVSZz.jpg", alt: "Elite Access", style: "sm:-rotate-2" },
-    { src: "https://i.imgur.com/pBz3lRu.jpg", alt: "The Crowd", style: "sm:rotate-2" },
-    { src: "https://i.imgur.com/WLEOONZ.jpg", alt: "Grand Tradition", style: "sm:-rotate-1" },
-    { src: "https://i.imgur.com/SXyDmPV.jpg", alt: "Lights", style: "sm:rotate-1" },
-    { src: "https://i.imgur.com/xQvr2g7.jpg", alt: "Spotlight", style: "sm:-rotate-2" },
+    { src: "https://i.imgur.com/SVKdIjf.jpg", alt: "Elite Moment", style: "sm:rotate-1" },
+    { src: "https://i.imgur.com/Iu5CyKt.jpg", alt: "VVIP Access", style: "sm:-rotate-2" },
+    { src: "https://i.imgur.com/KT9So0f.jpg", alt: "Power Protocol", style: "sm:rotate-2" },
+    { src: "https://i.imgur.com/FDPVQwP.jpg", alt: "Handling Elite", style: "sm:-rotate-1" },
+    { src: "https://i.imgur.com/QHqmyr0.jpg", alt: "VIP Experience", style: "sm:rotate-1" },
+    { src: "https://i.imgur.com/c5P6T82.jpg", alt: "Exclusive Access", style: "sm:-rotate-2" },
+    { src: "https://i.imgur.com/SBUKdpX.jpg", alt: "Grand Event", style: "sm:rotate-1" },
+    { src: "https://i.imgur.com/XHOrKVS.jpg", alt: "Spectacle", style: "sm:-rotate-2" },
+    { src: "https://i.imgur.com/zDXVSZz.jpg", alt: "Celebrity", style: "sm:rotate-2" },
   ];
 
   return (
@@ -573,7 +587,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-[10px] sm:text-xs uppercase font-bold tracking-widest text-brand-gold mb-1">Email</h4>
-                  <p className="text-brand-green font-display font-bold text-lg sm:text-xl break-all">vvip@visuvalvibe.com</p>
+                  <p className="text-brand-green font-display font-bold text-lg sm:text-xl break-all">visuvalvibe@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -656,7 +670,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center">
                     <Mail className="w-5 h-5 text-brand-gold mr-3 shrink-0" />
-                    <a href="mailto:vvip@visuvalvibe.com" className="text-white/80 font-bold text-sm hover:text-brand-gold transition-colors block border-b border-brand-gold/30 pb-1">vvip@visuvalvibe.com</a>
+                    <a href="mailto:visuvalvibe@gmail.com" className="text-white/80 font-bold text-sm hover:text-brand-gold transition-colors block border-b border-brand-gold/30 pb-1">visuvalvibe@gmail.com</a>
                 </div>
                 
                 <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center px-6 py-3 bg-[#25D366] text-white rounded-full shadow-[2px_2px_0_0_#FFFDF5] hover:-translate-y-1 transition-all text-xs uppercase font-bold tracking-widest border-2 border-white">
