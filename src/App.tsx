@@ -28,9 +28,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen }: any) => {
     <>
       <header className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300 ${isScrolled ? 'top-2' : 'top-4 md:top-6'}`}>
         <div className={`bg-brand-green text-white rounded-full px-3 md:px-6 py-2 md:py-3 transition-all duration-300 funky-border flex justify-between items-center ${isScrolled ? 'shadow-[4px_4px_0_0_#C9A84C]' : 'shadow-[6px_6px_0_0_#C9A84C]'}`}>
-          <a href="#home" className="flex items-center gap-2 group relative origin-left hover:scale-105 transition-transform bg-brand-ivory px-2 py-1.5 md:px-3 md:py-2 rounded-full shadow-inner border-2 border-brand-green">
-            <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-8 md:h-12 w-auto object-contain shrink-0" />
-            <span className="font-display font-bold text-brand-green text-[11px] md:text-sm uppercase tracking-wider leading-none whitespace-nowrap">Visuval Vibe</span>
+          <a href="#home" className="flex items-center gap-2 md:gap-3 group hover:opacity-90 transition-opacity">
+            <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-8 md:h-10 w-auto object-contain shrink-0 rounded-md border-2 border-brand-gold/60" />
+            <span className="font-display font-bold text-white text-lg md:text-2xl uppercase tracking-widest leading-none whitespace-nowrap">Visuval Vibe</span>
           </a>
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {navLinks.map((link) => (
@@ -264,9 +264,10 @@ const PoliticalHospitality = () => {
     const politicalImages = [
         "https://i.imgur.com/Nz1agNz.jpg",
         "https://i.imgur.com/df3RXSs.jpg",
-        "https://i.imgur.com/xKhGyQ2.jpg",
         "https://i.imgur.com/AUs0dup.jpg",
-        "https://i.imgur.com/Jx3tf0b.jpg"
+        "https://i.imgur.com/xKhGyQ2.jpg",
+        "https://i.imgur.com/KT9So0f.jpg",
+        "https://i.imgur.com/SBUKdpX.jpg"
     ];
 
     return (
@@ -302,13 +303,13 @@ const PoliticalHospitality = () => {
                </div>
                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="relative overflow-hidden group funky-card p-2 bg-white h-56">
-                        <img src="https://i.imgur.com/KT9So0f.jpg" className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:'center 20%'}} alt="Power 1"/>
+                        <img src={politicalImages[3]} className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 1"/>
                     </div>
                     <div className="relative overflow-hidden group funky-card p-2 bg-white h-56">
-                        <img src="https://i.imgur.com/c5P6T82.jpg" className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 2"/>
+                        <img src={politicalImages[4]} className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:'center 20%'}} alt="Power 2"/>
                     </div>
                     <div className="relative overflow-hidden group funky-card p-2 bg-white h-56">
-                        <img src="https://i.imgur.com/SBUKdpX.jpg" className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 3"/>
+                        <img src={politicalImages[5]} className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Power 3"/>
                     </div>
                </div>
            </div>
@@ -464,11 +465,11 @@ const Gallery = () => {
   const images = [
     { src: "https://i.imgur.com/SVKdIjf.jpg", alt: "Elite Moment", style: "sm:rotate-1" },
     { src: "https://i.imgur.com/Iu5CyKt.jpg", alt: "VVIP Access", style: "sm:-rotate-2" },
-    { src: "https://i.imgur.com/KT9So0f.jpg", alt: "Power Protocol", style: "sm:rotate-2" },
+    { src: "https://i.imgur.com/wpmuhaC.jpg", alt: "Blockbuster Moment", style: "sm:rotate-2" },
     { src: "https://i.imgur.com/FDPVQwP.jpg", alt: "Handling Elite", style: "sm:-rotate-1" },
     { src: "https://i.imgur.com/QHqmyr0.jpg", alt: "VIP Experience", style: "sm:rotate-1" },
-    { src: "https://i.imgur.com/c5P6T82.jpg", alt: "Exclusive Access", style: "sm:-rotate-2" },
-    { src: "https://i.imgur.com/SBUKdpX.jpg", alt: "Grand Event", style: "sm:rotate-1" },
+    { src: "https://i.imgur.com/Jx3tf0b.jpg", alt: "Exclusive Access", style: "sm:-rotate-2" },
+    { src: "https://i.imgur.com/g5I7rZ9.jpg", alt: "Grand Event", style: "sm:rotate-1" },
     { src: "https://i.imgur.com/XHOrKVS.jpg", alt: "Spectacle", style: "sm:-rotate-2" },
     { src: "https://i.imgur.com/zDXVSZz.jpg", alt: "Celebrity", style: "sm:rotate-2" },
   ];
