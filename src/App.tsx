@@ -28,8 +28,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen }: any) => {
     <>
       <header className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300 ${isScrolled ? 'top-2' : 'top-4 md:top-6'}`}>
         <div className={`bg-brand-green text-white rounded-full px-3 md:px-6 py-2 md:py-3 transition-all duration-300 funky-border flex justify-between items-center ${isScrolled ? 'shadow-[4px_4px_0_0_#C9A84C]' : 'shadow-[6px_6px_0_0_#C9A84C]'}`}>
-          <a href="#home" className="flex items-center group relative origin-left hover:scale-105 transition-transform bg-brand-ivory px-3 py-1.5 rounded-full shadow-inner border-2 border-brand-green">
-            <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-8 md:h-10 w-auto object-contain" />
+          <a href="#home" className="flex items-center gap-3 group relative origin-left hover:scale-105 transition-transform bg-brand-ivory px-3 py-2 rounded-full shadow-inner border-2 border-brand-green">
+            <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-10 md:h-14 w-auto object-contain" />
+            <span className="hidden sm:block font-display font-bold text-brand-green text-sm md:text-base uppercase tracking-widest leading-tight">Visuval<br/>Vibe</span>
           </a>
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {navLinks.map((link) => (
@@ -57,8 +58,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen }: any) => {
               </button>
             </div>
             <div className="flex justify-center mb-6">
-                <div className="bg-brand-ivory px-4 py-2 rounded-2xl border-4 border-brand-green shadow-[4px_4px_0_0_#C9A84C]">
-                  <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-12 w-auto object-contain" />
+                <div className="bg-brand-ivory px-4 py-3 rounded-2xl border-4 border-brand-green shadow-[4px_4px_0_0_#C9A84C] flex items-center gap-3">
+                  <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-14 w-auto object-contain" />
+                  <span className="font-display font-bold text-brand-green text-xl uppercase tracking-widest leading-tight">Visuval<br/>Vibe</span>
                 </div>
             </div>
             <div className="flex flex-col space-y-4 items-center text-center w-full flex-grow">
@@ -139,31 +141,22 @@ const Ticker = () => {
 
 /* --- UPCOMING EVENT --- */
 const UpcomingEvent = () => {
-    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-    useEffect(() => {
-        const targetDate = new Date("2026-07-25T20:00:00");
-        const interval = setInterval(() => {
-            const now = new Date();
-            const difference = targetDate.getTime() - now.getTime();
-            if (difference > 0) {
-                setTimeLeft({
-                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                    minutes: Math.floor((difference / 1000 / 60) % 60),
-                    seconds: Math.floor((difference / 1000) % 60)
-                });
-            }
-        }, 1000);
-        return () => clearInterval(interval);
-    }, []);
-
     return (
         <section id="upcoming" className="relative overflow-hidden bg-black border-y-4 border-brand-gold">
+            {/* First Event Image */}
             <div className="w-full">
                 <img
-                    src="https://i.imgur.com/wXR5TGi.jpg"
-                    alt="MM Keeravani Live In Concert Dallas July 25 2026"
+                    src="https://i.imgur.com/LpE93El.jpg"
+                    alt="Upcoming Event 1"
+                    className="w-full h-auto object-contain block"
+                    style={{ maxHeight: '90vh' }}
+                />
+            </div>
+            {/* Second Event Image */}
+            <div className="w-full border-t-2 border-brand-gold/40">
+                <img
+                    src="https://i.imgur.com/wkBqWeT.jpg"
+                    alt="Upcoming Event 2"
                     className="w-full h-auto object-contain block"
                     style={{ maxHeight: '90vh' }}
                 />
@@ -172,24 +165,8 @@ const UpcomingEvent = () => {
                 <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
                     <div className="inline-flex items-center gap-3">
                         <span className="w-8 h-[1px] bg-brand-gold"></span>
-                        <span className="text-brand-gold text-[10px] uppercase tracking-[0.5em] font-bold">Visuval Vibe Presents · July 25, 2026 · Dallas, Texas</span>
+                        <span className="text-brand-gold text-[10px] uppercase tracking-[0.5em] font-bold">Visuval Vibe Presents · Dallas, Texas</span>
                         <span className="w-8 h-[1px] bg-brand-gold"></span>
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
-                        {[
-                            { val: timeLeft.days, label: "Days" },
-                            { val: timeLeft.hours, label: "Hours" },
-                            { val: timeLeft.minutes, label: "Mins" },
-                            { val: timeLeft.seconds, label: "Secs" },
-                        ].map(({ val, label }, i) => (
-                            <div key={label} className="flex items-center gap-3 sm:gap-5">
-                                <div className="bg-brand-green border-2 border-brand-gold rounded-xl p-3 sm:p-5 w-16 sm:w-24 text-center shadow-[2px_2px_0_0_#C9A84C]">
-                                    <p className="text-2xl sm:text-4xl font-display font-bold text-white leading-none">{String(val).padStart(2,"0")}</p>
-                                    <p className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest mt-2 text-white/80">{label}</p>
-                                </div>
-                                {i < 3 && <span className="text-brand-gold font-display text-2xl sm:text-4xl font-bold animate-pulse">:</span>}
-                            </div>
-                        ))}
                     </div>
                     <div className="flex flex-col sm:flex-row items-center gap-4">
                         <a href="#contact" className="bg-brand-gold text-brand-dark px-10 sm:px-14 py-4 uppercase tracking-[0.25em] text-xs sm:text-sm font-bold hover:bg-white transition-all duration-300 rounded-full border-2 border-brand-dark shadow-[4px_4px_0_0_#145942]">
@@ -452,7 +429,6 @@ const Sponsor = () => {
                                  <span className="px-4 text-xs font-bold text-brand-gold uppercase">OR</span>
                                  <div className="flex-grow h-px bg-brand-gold/30"></div>
                              </div>
-                             {/* SPONSOR FORM - silent background submission */}
                              <form
                                   onSubmit={async e => {
                                     e.preventDefault();
@@ -563,7 +539,6 @@ const Contact = () => {
 
           <div className="funky-card p-6 sm:p-8 md:p-12 self-start bg-brand-cream border-[4px] sm:border-[6px] w-full max-w-md mx-auto lg:max-w-none">
              <h3 className="text-2xl sm:text-3xl font-display font-bold uppercase text-brand-green mb-6 sm:mb-8 text-center tracking-wide">Inquiry Form</h3>
-             {/* INQUIRY FORM - silent background submission */}
              <form
                 onSubmit={async e => {
                   e.preventDefault();
@@ -615,8 +590,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-b-2 border-brand-gold/50 pb-12 sm:pb-16 mb-8 mt-4">
           <div className="lg:col-span-2">
-             <div className="bg-brand-ivory p-3 sm:p-5 rounded-3xl mb-6 shadow-[4px_4px_0_0_#C9A84C] inline-block border-2 sm:border-4 border-brand-gold">
+             <div className="bg-brand-ivory p-3 sm:p-5 rounded-3xl mb-6 shadow-[4px_4px_0_0_#C9A84C] inline-flex items-center gap-3 border-2 sm:border-4 border-brand-gold">
                 <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-12 sm:h-16 lg:h-20 w-auto object-contain" />
+                <span className="font-display font-bold text-brand-green text-xl sm:text-2xl uppercase tracking-widest leading-tight">Visuval<br/>Vibe</span>
               </div>
              <p className="text-white/90 font-body font-bold text-xl sm:text-2xl max-w-md mt-4">
                "We don't plan events; we architect legendary moments."
