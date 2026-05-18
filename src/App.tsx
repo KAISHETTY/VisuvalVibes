@@ -28,9 +28,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen }: any) => {
     <>
       <header className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300 ${isScrolled ? 'top-2' : 'top-4 md:top-6'}`}>
         <div className={`bg-brand-green text-white rounded-full px-3 md:px-6 py-2 md:py-3 transition-all duration-300 funky-border flex justify-between items-center ${isScrolled ? 'shadow-[4px_4px_0_0_#C9A84C]' : 'shadow-[6px_6px_0_0_#C9A84C]'}`}>
-          <a href="#home" className="flex items-center gap-3 group relative origin-left hover:scale-105 transition-transform bg-brand-ivory px-3 py-2 rounded-full shadow-inner border-2 border-brand-green">
-            <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-10 md:h-14 w-auto object-contain" />
-            <span className="hidden sm:block font-display font-bold text-brand-green text-sm md:text-base uppercase tracking-widest leading-tight">Visuval<br/>Vibe</span>
+          <a href="#home" className="flex items-center gap-2 group relative origin-left hover:scale-105 transition-transform bg-brand-ivory px-2 py-1.5 md:px-3 md:py-2 rounded-full shadow-inner border-2 border-brand-green">
+            <img src={LOGO_URL} alt="Visuval Vibe Logo" className="h-8 md:h-12 w-auto object-contain shrink-0" />
+            <span className="font-display font-bold text-brand-green text-[11px] md:text-sm uppercase tracking-wider leading-none whitespace-nowrap">Visuval Vibe</span>
           </a>
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {navLinks.map((link) => (
