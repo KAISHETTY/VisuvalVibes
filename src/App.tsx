@@ -263,11 +263,11 @@ const CelebrityHospitality = () => {
 const PoliticalHospitality = () => {
     const politicalImages = [
         "https://i.imgur.com/c5P6T82.jpg",
+        "https://i.imgur.com/SBUKdpX.jpg",
         "https://i.imgur.com/Jx3tf0b.jpg",
         "https://i.imgur.com/Nz1agNz.jpg",
         "https://i.imgur.com/df3RXSs.jpg",
-        "https://i.imgur.com/xKhGyQ2.jpg",
-        "https://i.imgur.com/SBUKdpX.jpg"
+        "https://i.imgur.com/xKhGyQ2.jpg"
     ];
 
     return (
