@@ -297,7 +297,7 @@ const PoliticalHospitality = () => {
                             <img src={politicalImages[1]} className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Political 1"/>
                         </div>
                         <div className="relative overflow-hidden group funky-card p-2 bg-white h-44 sm:h-[185px]">
-                            <img src={politicalImages[2]} className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 group-hover:scale-105" alt="Political 2"/>
+                            <img src={politicalImages[2]} className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105" style={{objectPosition:"center 35%"}} alt="Political 2"/>
                         </div>
                     </div>
                </div>
